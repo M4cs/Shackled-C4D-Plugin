@@ -1,6 +1,9 @@
 # Shackled-C4D-Plugin
 A plugin for Cinema 4D to allow you to export objects to the Shackled on-chain rendering engine.
 
+Shackled Creator: https://shackled.spectra.art/#/creator
+Original Blender File w/ Script Pre-Loaded: [Here](https://shackled-frontend81451-dev.s3.amazonaws.com/public/render_docs/shackled.blend)
+
 ## Requirements
 
 - Cinema 4D Studio version or a triangulated mesh already
