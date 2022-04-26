@@ -25,7 +25,7 @@ First, select your object and under the "Mesh" tab, hover over "Commands" and se
 
 Second, add a Vertex Paint tag to your objects that you want to export. This will allow you to color the object for the Shackled Renderer. Refer to the Youtube video linked up top for more details on how to use Vertex Paint. If you don't include a Vertex Paint tag, your object will be exported as a red object by default.
 
-Finally, click Execute on the Script Manager window you opened earlier. If you don't have it open but already setup the output folder, simply click the "ShackledExport" option under User Scripts in the "Script" tab.
+Finally, select all objects you want to export and click Execute on the Script Manager window you opened earlier. If you don't have it open but already setup the output folder, simply click the "ShackledExport" option under User Scripts in the "Script" tab.
 
 This should export your object into a JSON file which you can find with the same name as the object in the heiracrchy. This will overwrite any objects named the same thing so make sure they are all unique!
 
