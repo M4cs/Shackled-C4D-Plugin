@@ -5,6 +5,8 @@ Shackled Creator: https://shackled.spectra.art/#/creator
 
 Original Blender File w/ Script Pre-Loaded: [Here](https://shackled-frontend81451-dev.s3.amazonaws.com/public/render_docs/shackled.blend)
 
+**Video Tutorial for this process [here](https://www.youtube.com/watch?v=gUwGjTxzjDs)**
+
 ## Requirements
 
 - Cinema 4D Studio version or a triangulated mesh already
