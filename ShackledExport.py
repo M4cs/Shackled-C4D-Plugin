@@ -8,7 +8,7 @@ import os
 
 # Must have Studio version of Cinema 4D. It seems lite and S versions
 # are missing the Mesh > Commands tab. If you can retriangulate your mesh
-# another way, please do let me know @maxbridgland. 
+# another way, please do let me know @maxbridgland.
 #
 # For now, you'll need to retriangulate your mesh and add the Vertex Color
 # tag to the object. Refer to the tutorial video if you get lost!
@@ -25,11 +25,11 @@ except:
 # Main function
 def main():
     so = doc.GetActiveObjects(c4d.GETACTIVEOBJECTFLAGS_SELECTIONORDER | c4d.GETACTIVEOBJECTFLAGS_CHILDREN)
-    
+
     for o in so:
         verts = []
         cols = []
-        
+
         verts_local = [x for x in o.GetAllPoints()]
         for i, vert in enumerate(verts_local):
             fac = 10
@@ -37,11 +37,11 @@ def main():
             v1 = int(fac * vert[1])
             v2 = int(fac * vert[2])
             verts.append([v0,v1,v2])
-        
+
         try:
             color_tag = o.GetTag(c4d.Tvertexcolor)
             data = color_tag.GetDataAddressR()
-        
+
             for idx in range(o.GetPointCount()):
                 color = c4d.VertexColorTag.GetColor(data, None, None, idx)
                 cols.append(
@@ -53,11 +53,11 @@ def main():
                 cols.append(
                     default_color
                 )
-            
+
         faces = []
         for i, face in enumerate(o.GetAllPolygons()):
             faces.append([face.a, face.b, face.c])
-            
+
         dct = {
             "name": "",
             "description": "",
@@ -68,8 +68,8 @@ def main():
                 "wireframe": False,
                 "perspCamera": True,
                 "invert": False,
-                "objPosition": [0,0,-2000],
-                "objScale": 10,
+                "objPosition": [0,0,-3000],
+                "objScale": 3,
                 "backgroundColor": [[255,255,255], [255,255,255]],
                 "lightingParams": {
                     "applyLighting": False,
@@ -84,14 +84,14 @@ def main():
                 }
             },
             "verts": verts,
-            "cols": cols, 
+            "cols": cols,
             "faces": faces
         }
-        
+
         print "Generated Shackled Render File with {} vertices, {} faces, and {} colors.".format(
             len(verts), len(faces), len(cols)
         )
-        
+
         fp_out = "{}/{}.json".format(output_folder, o.GetName())
         with open(fp_out, "w") as f:
             json.dump(dct, f, indent=4)
